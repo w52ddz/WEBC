@@ -41,3 +41,8 @@ export function matchRoute(path: string, routes: RouteObject[] = []): any {
 }
 
 export const baseDir = '/WEBC'
+
+export const judgeMobile = () =>
+  window.navigator.userAgent.match(
+    /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+  )

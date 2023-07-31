@@ -8,6 +8,7 @@ import carousel1 from '@/assets/images/carousel1.jpg'
 import video from '@/assets/images/video.mp4'
 import './index.scss'
 import * as React from 'react'
+import { judgeMobile } from '@/util/util'
 
 function Layout() {
   // const navigate = useNavigate()
@@ -39,11 +40,17 @@ function Layout() {
 
   const generateCarouselList = (): JSX.Element[] => {
     return carouselDataList.map((item, index) => {
-      const styles: React.CSSProperties = {}
+      const itemStyle: React.CSSProperties = {}
       let innerEl = <></>
+      const videoStyle: React.CSSProperties = {}
+      const isMobile = judgeMobile()
+      if (isMobile) {
+        videoStyle.width = 'auto'
+        videoStyle.height = '100%'
+      }
       // 背景图
       if (item.type === 'img') {
-        styles.backgroundImage = `url(${item.src})`
+        itemStyle.backgroundImage = `url(${item.src})`
       } else {
         innerEl = (
           <video
@@ -53,12 +60,13 @@ function Layout() {
             ref={videoRef}
             className='carousel-video'
             src={video}
+            style={videoStyle}
           ></video>
         )
       }
       return (
         <div key={index} className='home-carousel-item'>
-          <div className='carousel-item-inner' style={styles}>
+          <div className='carousel-item-inner' style={itemStyle}>
             {innerEl}
           </div>
         </div>
@@ -72,7 +80,6 @@ function Layout() {
     console.log(index)
     const item = carouselDataList[index]
     if (item.type === 'video') {
-      console.log('切换到了video：')
       if (!videoEl) {
         videoEl = videoRef.current
       }
@@ -82,18 +89,17 @@ function Layout() {
         videoEl.currentTime = 0
         videoEl.pause()
       }
-      console.log('切换到了图片：')
     }
   }
 
   return (
     <section className='home-page'>
       <Carousel
-        autoplay
         autoplaySpeed={5000}
         effect='fade'
         speed={800}
         arrows
+        autoplay
         prevArrow={<LeftOutlined />}
         nextArrow={<RightOutlined />}
         className='home-carousel'
