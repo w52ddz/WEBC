@@ -1,6 +1,6 @@
 // import { useNavigate } from 'react-router-dom'
 // import store from '@/redux'
-// import { useState } from 'react'
+import { useEffect } from 'react'
 // import { useSelector } from 'react-redux'
 import { Carousel } from 'antd'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons'
@@ -29,6 +29,13 @@ function Layout() {
     { type: 'img', src: carousel1 },
     { type: 'video', src: video },
   ]
+
+  useEffect(() => {
+    // dom mouted，save video element and pause
+    videoEl = videoRef.current
+    videoEl!.currentTime = 0
+    videoEl!.pause()
+  })
 
   const generateCarouselList = (): JSX.Element[] => {
     return carouselDataList.map((item, index) => {
