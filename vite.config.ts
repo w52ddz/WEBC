@@ -4,7 +4,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/WEBC/',
+  base: '/WEBC',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

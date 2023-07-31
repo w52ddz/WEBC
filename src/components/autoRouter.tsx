@@ -1,10 +1,12 @@
-import { useLocation, Navigate } from 'react-router-dom'
+import { useLocation /* , Navigate */ } from 'react-router-dom'
 import { matchRoute } from '@/util/util'
 import { router_item } from '@/routes/index'
 
 function AutoRouter(props: { children: JSX.Element }) {
   const { pathname } = useLocation()
-  const token = localStorage.getItem('ACCESS_TOKEN')
+  // const token = localStorage.getItem('ACCESS_TOKEN')
+  console.log('当前路径：', pathname)
+
   //1、获取当前路径对应的路由配置
   const route = matchRoute(pathname, router_item)
   //2、如果noAuth为true，则直接跳过校验
@@ -17,13 +19,14 @@ function AutoRouter(props: { children: JSX.Element }) {
     return props.children
   }
 
-  if (route && route.meta?.auth && token) {
-    // 1、存在token，则进入主页
-    return props.children
-  } else {
-    // 2、如果不存在token，则进入登录页
-    return <Navigate to='/login' />
-  }
+  // if (route && route.meta?.auth && token) {
+  //   // 1、存在token，则进入主页
+  //   return props.children
+  // } else {
+  //   // 2、如果不存在token，则进入登录页
+  //   return <Navigate to='/login' />
+  // }
+  return props.children
 }
 
 export default AutoRouter

@@ -1,13 +1,13 @@
 export interface MetaProp {
-    title: string;
-    key: string;
-    noAuth: boolean;
+  title: string
+  key: string
+  noAuth: boolean
 }
 export interface RouteObject {
-    children?: RouteObject[];
-    element?: React.ReactNode;
-    path?: string;
-    meta?: Partial<MetaProp>
+  children?: RouteObject[]
+  element?: React.ReactNode
+  path?: string
+  meta?: Partial<MetaProp>
 }
 
 /**
@@ -17,23 +17,27 @@ export interface RouteObject {
  * @returns 路由配置项
  */
 export function matchRoute(path: string, routes: RouteObject[] = []): any {
-    const pathArr = path.split("/");
-    pathArr.shift();
-    const curPath = pathArr.shift();
-    let result: any = null;
-    for (let i = 0; i < routes.length; i++) {
-        const item = routes[i];
-        if ([curPath, `/${curPath}`].includes(item.path)) {
-            if (!pathArr.length) {
-                return item;
-            }
-            if (item.children) {
-                const res = matchRoute(`/${pathArr.join("/")}`, item.children);
-                if (res) {
-                    return res;
-                }
-            }
+  const pathArr = path.split('/')
+
+  pathArr.shift()
+  const curPath = pathArr.shift()
+
+  let result: any = null
+  for (let i = 0; i < routes.length; i++) {
+    const item = routes[i]
+    if ([curPath, `/${curPath}`].includes(item.path)) {
+      if (!pathArr.length) {
+        return item
+      }
+      if (item.children) {
+        const res = matchRoute(`/${pathArr.join('/')}`, item.children)
+        if (res) {
+          return res
         }
+      }
     }
-    return result;
+  }
+  return result
 }
+
+export const baseDir = '/WEBC'
