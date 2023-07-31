@@ -82,6 +82,10 @@ function Layout() {
   return (
     <section className='home-page'>
       <Carousel
+        autoplay
+        autoplaySpeed={5000}
+        effect='fade'
+        speed={800}
         arrows
         prevArrow={<LeftOutlined />}
         nextArrow={<RightOutlined />}
