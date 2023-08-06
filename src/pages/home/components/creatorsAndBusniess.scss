@@ -1,0 +1,178 @@
+.home-creators-and-busniess {
+  .container {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    .container-inner {
+      margin: 0 auto;
+      width: 83%;
+    }
+  }
+  p {
+    color: #777;
+    line-height: 26px;
+    margin: 0 0 20px;
+    text-align: center;
+    &.shadow {
+      font-size: 25px;
+      color: $primary;
+      font-family: ShadowsIntoLight, cursive;
+    }
+  }
+  .text-secondary {
+    color: $primary !important;
+  }
+  h4 {
+    color: $primary;
+    font-family: ShadowsIntoLight, cursive;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 27px;
+    text-align: center;
+    padding-bottom: 14px;
+  }
+  h5 {
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 14px;
+    font-size: 1rem;
+  }
+  .text-left {
+    font-size: 1rem;
+  }
+  .nav-tabs {
+    margin: 0 auto 10px;
+    @extend .flex-all-center;
+    .nav-tab-item {
+      margin-bottom: 20px;
+      padding: 15px 30px;
+      background: none;
+      border: 0;
+      border-bottom: 3px solid #eee;
+      border-radius: 0;
+      color: #777;
+      cursor: pointer;
+      font-size: 16px;
+      &.active {
+        border-bottom-color: $primary;
+      }
+      .tab-icon-name {
+        color: #212529;
+        font-weight: 700;
+        font-size: 0.9em;
+        padding-top: 0.5rem;
+      }
+      .anticon {
+        font-size: 2em;
+        height: 75px;
+        padding: 0;
+        width: 75px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        background: #fff;
+        border: 1px solid #cecece;
+        color: $primary;
+        border-radius: 50%;
+        text-align: center;
+        @extend .flex-all-center;
+        position: relative;
+        &:hover {
+          &::after {
+            transform: scale(1.1);
+          }
+        }
+        &::after {
+          transition: all 0.2s, transform 0.2s;
+          border: 5px solid #f7f7f7;
+          border-radius: 50%;
+          box-sizing: content-box;
+          content: '';
+          display: block;
+          height: 100%;
+          left: -6px;
+          padding: 1px;
+          position: absolute;
+          top: -6px;
+          width: 100%;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+  .nav-content-item {
+    padding-bottom: 60px;
+  }
+  .application-btn {
+    border: 2px solid $primary;
+    color: $primary;
+    font-weight: 600;
+    border-radius: 35px;
+    padding: 0.483rem 0.933rem;
+    font-size: 0.8rem;
+    background-color: transparent;
+    @extend .flex-all-center;
+    display: inline-flex;
+    &.active {
+      color: #fff;
+      background-color: $primary;
+      left: 0 !important;
+      &:hover {
+        background-color: #e9807a;
+        border-color: #ea8b85 #ea8b85 $primary;
+      }
+      .anticon {
+        font-size: 13px;
+        color: #fff;
+        margin-left: 4px !important;
+        position: static !important;
+      }
+    }
+    &:hover {
+      color: #fff;
+      background-color: $primary;
+      .anticon {
+        left: 5px;
+        color: #fff;
+      }
+    }
+    .anticon {
+      color: $primary;
+      font-size: 24px;
+      margin-left: 10px;
+      position: relative;
+      left: 0;
+      transition: all ease 300ms;
+    }
+  }
+  .fz20 {
+    font-size: 19px;
+    font-family: 'Open Sans', Arial, sans-serif !important;
+  }
+  .why-text {
+    color: $primary !important;
+    font-weight: 700 !important;
+    line-height: 26px;
+    font-size: 1rem;
+  }
+  // 服务部分
+  .service-container {
+    background-color: $primary;
+    color: #fff;
+    padding: 35px 0;
+    h2 {
+      font-weight: 700;
+      font-size: 30px;
+      font-family: 'Open Sans', Arial, sans-serif;
+      margin-bottom: 0.5rem;
+    }
+    .opacity-7 {
+      line-height: 26px;
+      opacity: 0.7;
+      color: #fff;
+      &.no-margin {
+        margin: 0;
+      }
+    }
+  }
+}

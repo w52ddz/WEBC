@@ -1,6 +1,45 @@
 $red: red;
+$primary: #e36159;
+@font-face {
+  font-family: ShadowsIntoLight;
+  src: url('../font/ShadowsIntoLight.woff2');
+}
+::selection {
+  color: #fff;
+  background: #e36159;
+}
+.align-center {
+  text-align: center;
+}
+.align-left {
+  text-align: left;
+}
+body {
+  font-size: 14px;
+}
 .flex-all-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+$container-max-widths: (
+  '0': 540px,
+  '576px': 540px,
+  '768px': 720px,
+  '992px': 960px,
+  '1200px': 1140px,
+  // '1400px': 1320px,
+) !default;
+@each $breakpoint, $container-max-width in $container-max-widths {
+  @media (min-width: $breakpoint) {
+    .container {
+      max-width: $container-max-width;
+    }
+  }
+}
+.container {
+  margin: 0 auto;
+}
+.link {
+  text-decoration: none;
 }

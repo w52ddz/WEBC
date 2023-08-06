@@ -29,6 +29,14 @@ export const router_item: Array<object> = [
     element: lazyLoad(lazy(() => delayForDemo(import('@/pages/user')))),
   },
   {
+    path: '/creators',
+    key: 'creators',
+    label: 'creators',
+    element: lazyLoad(
+      lazy(() => delayForDemo(import('@/pages/creators/creators')))
+    ),
+  },
+  {
     path: '/404',
     hidden: true,
     element: <Error404 />,

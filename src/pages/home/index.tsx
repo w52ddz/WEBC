@@ -5,10 +5,14 @@ import { useEffect, useState } from 'react'
 import { Carousel } from 'antd'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 import carousel1 from '@/assets/images/carousel1.jpg'
+import carousel2 from '@/assets/images/carousel2.png'
+import carousel3 from '@/assets/images/carousel3.png'
 import video from '@/assets/images/video.mp4'
 import './index.scss'
 import * as React from 'react'
-import { judgeMobile } from '@/util/util'
+// import { judgeMobile } from '@/util/util'
+import Header from '@/components/header/header'
+import CreatorsAndBusniess from './components/creatorsAndBusniess'
 
 function Layout() {
   // const navigate = useNavigate()
@@ -28,6 +32,8 @@ function Layout() {
   // 轮播图数据
   const carouselDataList = [
     { type: 'img', src: carousel1 },
+    { type: 'img', src: carousel2 },
+    { type: 'img', src: carousel3 },
     { type: 'video', src: video },
   ]
 
@@ -108,7 +114,8 @@ function Layout() {
   }
 
   return (
-    <section className='home-page'>
+    <div className='home-page'>
+      <Header fixed />
       <Carousel
         autoplaySpeed={5000}
         effect='fade'
@@ -122,7 +129,8 @@ function Layout() {
       >
         {generateCarouselList()}
       </Carousel>
-    </section>
+      <CreatorsAndBusniess />
+    </div>
   )
 }
 
