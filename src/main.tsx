@@ -6,7 +6,7 @@ import './index.css'
 import { Provider } from 'react-redux'
 import store from '@/redux/index'
 import { baseDir } from '@/util/util'
-import 'animate.css'
+import './assets/styles/animate.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   // <React.StrictMode>

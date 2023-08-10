@@ -7,22 +7,18 @@ import {
 import './creatorsAndBusniess.scss'
 import { useEffect, useState } from 'react'
 import { Divider } from 'antd'
-// import { WOW } from 'wowjs'
+import WOW from '@/util/wow'
 
-// import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-
-export default function () {
+ function useCreatorsAndBusniess() {
   useEffect(() => {
-    // setTimeout(() => {
-    //   var wow = new window.WOW({
-    //     boxClass: 'wow',
-    //     animateClass: 'animated',
-    //     offset: -200,
-    //     mobile: true,
-    //     live: false,
-    //   })
-    //   wow.init()
-    // }, 1000)
+      const wow = new (WOW as any)({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: -200,
+        mobile: true,
+        live: false,
+      })
+      wow.init()
   }, [])
   const [tabIndex, setTabIndex] = useState(0)
 
@@ -137,13 +133,13 @@ export default function () {
         </div>
       </div>
       {/* 服务部分 */}
-      <div className='service-container'>
+      <div className='service-container wow fadeIn' data-wow-duration='300ms' data-wow-delay='100ms'>
         <div className='container'>
           <div className='container-inner'>
             <div
               className='wow fadeInUp'
               data-wow-duration='2s'
-              data-wow-delay='5s'
+              data-wow-delay='100ms'
             >
               <h2 className='align-center'>Services</h2>
               <p className='opacity-7 no-margin'>
@@ -162,3 +158,4 @@ export default function () {
     </div>
   )
 }
+export default useCreatorsAndBusniess
