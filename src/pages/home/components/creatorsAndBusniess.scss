@@ -1,4 +1,30 @@
 .home-creators-and-busniess {
+  @media (min-width: 992px) {
+    .col-lg-4 {
+      flex: 0 0 auto;
+      width: 33.3333333333%;
+    }
+    .home-about-us-left {
+      width: 50%;
+    }
+    .home-about-us-right {
+      width: 42%;
+    }
+    .core-value-left {
+      width: 50%;
+    }
+    .core-value-right {
+      width: 50%;
+    }
+    .work-with-left,
+    .work-with-right {
+      width: 50%;
+    }
+    .work-with-bottom-item {
+      width: 33.33% !important;
+    }
+  }
+
   .container {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -172,6 +198,273 @@
       color: #fff;
       &.no-margin {
         margin: 0;
+      }
+    }
+  }
+  .service-item-line {
+    @extend .flex;
+    flex-wrap: wrap;
+    color: #fff;
+    padding-top: 1.6rem;
+    .col-lg-4 {
+      @extend .flex;
+    }
+    .anticon {
+      font-size: 28px;
+      margin-top: 4px;
+      margin-right: 15px;
+      opacity: 0.9;
+    }
+    .service-item {
+      padding-right: 28px;
+      h4 {
+        font-weight: 700;
+        font-size: 1.2em;
+        margin-bottom: 0.5rem;
+        color: #fff;
+        padding-bottom: 0;
+        font-family: 'Open Sans', Arial, sans-serif;
+        text-align: left;
+      }
+      p {
+        color: #fff;
+        text-align: left;
+        opacity: 0.7;
+        span {
+          font-family: ShadowsIntoLight, cursive;
+          font-size: 22px;
+          display: block;
+        }
+      }
+    }
+  }
+  .service-top {
+    padding-bottom: 1.4rem;
+  }
+  // 关于我们
+  .home-about-us {
+    padding: 4rem 0;
+    background: #f7f7f7;
+    .container-inner {
+      @extend .flex-wrap;
+    }
+    .home-about-us-left {
+      padding: 0 48px 0 12px;
+    }
+    .home-about-us-right {
+      @extend .flex;
+    }
+    .title {
+      color: #212529;
+      font-weight: 800;
+      font-size: 1.8rem;
+      line-height: 42px;
+      font-family: 'Open Sans', Arial, sans-serif;
+      &.opacity-0 {
+        opacity: 0;
+      }
+    }
+    .title-desc {
+      color: #777;
+      line-height: 26px;
+      opacity: 0.8;
+      font-size: 1.2rem;
+      &.bold {
+        font-weight: bold;
+        opacity: 1;
+        color: #212529;
+      }
+    }
+    .separator {
+      background: #e36159;
+      height: 3px;
+      width: 120px;
+      margin: 22px 0;
+    }
+    p {
+      text-align: left;
+    }
+    .core-value-item {
+      @extend .flex-row-center;
+      margin-bottom: 0.5rem;
+      .anticon {
+        width: 43px;
+        height: 43px;
+        @extend .flex-all-center;
+        border-radius: 50%;
+        background-color: $primary;
+        padding: 0;
+        svg {
+          color: white;
+          font-size: 1.2rem;
+        }
+      }
+      span {
+        padding-left: 15px;
+        color: #777;
+        opacity: 0.9;
+      }
+    }
+    .core-value-img {
+      width: 100%;
+    }
+  }
+  .description {
+    background-color: $primary;
+    padding: 15px 0;
+    p {
+      color: #fff;
+      opacity: 0.7;
+      @extend .title-font;
+      margin: 0;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  // work with
+  .work-with-container {
+    background-color: #ededed;
+    padding: 20px 0;
+    .work-with-top {
+      @extend .flex-wrap;
+    }
+    .work-with-left {
+      padding: 0 48px 0 12px;
+      box-sizing: border-box;
+      .title {
+        font-size: 1.8rem;
+        color: #212529;
+        padding-bottom: 15px;
+        span {
+          font-weight: 800;
+        }
+      }
+      p {
+        text-align: left;
+      }
+      .apply-a {
+        font-family: ShadowsIntoLight, cursive;
+        color: $primary;
+        font-size: 22px;
+        text-decoration: none;
+        &:hover {
+          color: #e36159;
+          text-decoration: underline;
+        }
+      }
+    }
+    .work-with-right {
+      padding-top: 90px;
+      padding-left: 190px;
+      box-sizing: border-box;
+      position: relative;
+      .img {
+        max-width: 100%;
+      }
+      .work-with-img {
+        position: absolute;
+        bottom: 115px;
+        left: 0;
+        &.img-2 {
+          bottom: auto;
+          top: 12px;
+          left: 77px;
+          z-index: 2;
+        }
+      }
+      .work-with-static-img {
+        position: relative;
+        z-index: 3;
+      }
+    }
+  }
+  @keyframes scaleUp {
+    0% {
+      opacity: 0.6;
+      transform: translate3d(-50%, -50%, 0) scale(1.5);
+    }
+    25% {
+      opacity: 0;
+      transform: translate3d(-50%, -50%, 0) scale(1.8);
+    }
+    50% {
+      opacity: 0;
+      transform: translate3d(-50%, -50%, 0) scale(1);
+    }
+    100% {
+      opacity: 0.6;
+      transform: translate3d(-50%, -50%, 0) scale(1.5);
+    }
+  }
+  @keyframes scaleUpTwo {
+    0% {
+      opacity: 0.3;
+      transform: translate3d(-50%, -50%, 0) scale(2);
+    }
+
+    25% {
+      opacity: 0;
+      transform: translate3d(-50%, -50%, 0) scale(2.3);
+    }
+
+    50% {
+      opacity: 0;
+      transform: translate3d(-50%, -50%, 0) scale(1);
+    }
+
+    100% {
+      opacity: 0.3;
+      transform: translate3d(-50%, -50%, 0) scale(2);
+    }
+  }
+  .work-with-bottom {
+    @extend .flex-wrap;
+    margin-top: 3.5rem;
+    .work-with-bottom-item {
+      @extend .flex-col-center;
+      padding: 0 12px;
+      box-sizing: border-box;
+      width: 100%;
+      .top-circle {
+        width: 45px;
+        height: 45px;
+        position: relative;
+        background-color: $primary;
+        border-radius: 50%;
+        @extend .flex-all-center;
+        .anticon {
+          color: #fff;
+          font-size: 15px;
+          position: relative;
+          z-index: 2;
+        }
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100%;
+          height: 100%;
+          background-color: #e36159;
+          border-radius: 100%;
+          opacity: 0.6;
+          transform: translate3d(-50%, -50%, 0) scale(1.5);
+          transition: ease transform 1s;
+          z-index: 2;
+          animation: 3s linear infinite scaleUp;
+          animation-delay: 300ms;
+        }
+        &::after {
+          animation-name: scaleUpTwo;
+          transform: translate3d(-50%, -50%, 0) scale(2);
+        }
+      }
+      h6 {
+        padding: 35px 0 10px;
+        font-size: 1.5rem;
+        @extend .title-font;
       }
     }
   }

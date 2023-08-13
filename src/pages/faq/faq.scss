@@ -1,0 +1,92 @@
+.faq-page {
+  @extend .poppins;
+  .faq-title {
+    padding: 65px 0;
+    font-size: 32px;
+    color: #212529;
+    background-color: #f7f7f7;
+    text-align: center;
+    font-weight: 700;
+  }
+  .container {
+    padding: 40px 0;
+  }
+  .sub-title-container {
+    .title {
+      font-size: 2rem;
+      line-height: 42px;
+      span {
+        font-weight: 800;
+      }
+    }
+    .sub-title {
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      color: #777;
+      @extend .poppins;
+    }
+  }
+  .q-item {
+    margin-top: 10px;
+    .q-item-title {
+      transition: all 0.15s ease-out;
+      background: #f7f7f7;
+      border-left: 3px solid #ccc;
+      border-radius: 5px;
+      display: block;
+      min-height: 20px;
+      padding: 12px 20px 12px 15px;
+      position: relative;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      text-decoration: none !important;
+      color: $primary;
+      border-left-color: $primary;
+      border-right-color: $primary;
+      &::before {
+        content: ' ';
+        position: absolute;
+        top: calc(50% + 1px);
+        right: 14px;
+        border-color: #ccc;
+        border-top: 1px solid;
+        border-right: 1px solid;
+        width: 8px;
+        height: 8px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transition: transform 0.3s, top 0.3s;
+        transform: rotate(-45deg) translate3d(0, -50%, 0);
+        transform-origin: 35%;
+      }
+    }
+    .q-item-content-container {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 500ms;
+      .q-item-content {
+        overflow: hidden;
+        line-height: 26px;
+        color: #777;
+        > div {
+          padding: 10px 0;
+        }
+      }
+    }
+    &.active {
+      .q-item-title {
+        background-color: $primary;
+        color: #fff;
+        &::before {
+          top: calc(50% - 8px);
+          border-color: #fff;
+          transform: rotate(135deg);
+        }
+      }
+      .q-item-content-container {
+        grid-template-rows: 1fr;
+      }
+    }
+  }
+}

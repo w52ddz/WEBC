@@ -1,7 +1,7 @@
 import { useRoutes, Navigate } from 'react-router-dom'
 import { lazy } from 'react'
 //页面
-import Home from '@/pages/home'
+import Home from '@/pages/home/home'
 import Error404 from '@/pages/error/404'
 
 //公共
@@ -34,6 +34,20 @@ export const router_item: Array<object> = [
     label: 'creators',
     element: lazyLoad(
       lazy(() => delayForDemo(import('@/pages/creators/creators')))
+    ),
+  },
+  {
+    path: '/faq',
+    key: 'faq',
+    label: 'faq',
+    element: lazyLoad(lazy(() => delayForDemo(import('@/pages/faq/faq')))),
+  },
+  {
+    path: '/about-us',
+    key: 'about-us',
+    label: 'about-us',
+    element: lazyLoad(
+      lazy(() => delayForDemo(import('@/pages/about-us/about-us')))
     ),
   },
   {

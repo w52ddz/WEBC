@@ -13,8 +13,8 @@ function Header(props: { fixed?: boolean }) {
     { to: '/', name: 'HOME' },
     { to: '/creators', name: 'FOR CREATORS' },
     { to: '/', name: 'FOR BUSINESS' },
-    { to: '/', name: 'ABOUT US' },
-    { to: '/', name: 'FAQ' },
+    { to: '/about-us', name: 'ABOUT US' },
+    { to: '/faq', name: 'FAQ' },
   ]
   const [navActiveIndex, setNavIndex] = useState(0)
 
@@ -64,7 +64,7 @@ function Header(props: { fixed?: boolean }) {
             <a
               href='https://baidu.com'
               target='_blank'
-              className='apply-btn link'
+              className='custom-btn link'
             >
               APPLY HERE
             </a>

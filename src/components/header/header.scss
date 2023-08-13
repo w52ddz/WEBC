@@ -3,7 +3,7 @@
   .header-inner {
     height: $header-height;
     background-color: #212529;
-    transition: all ease 300ms;
+    transition: all ease 600ms;
     @extend .flex-all-center;
     .container {
       height: 100%;
@@ -17,10 +17,16 @@
       top: 0;
       left: 0;
       right: 0;
-      z-index: 1;
+      z-index: 100;
     }
     &.transparency {
       background-color: transparent;
+    }
+    &:not(.transparency) {
+      height: 70px;
+      &:not(.fixed) {
+        height: $header-height;
+      }
     }
   }
   .nav-right {
@@ -41,21 +47,6 @@
       &.active {
         color: #e36159;
       }
-    }
-  }
-  .apply-btn {
-    background-color: #dd4238;
-    background-image: none;
-    border-color: #dc372d #dc372d #b7281f;
-    font-size: 0.8rem;
-    padding: 0.533rem 0.933rem;
-    border-radius: 35px;
-    cursor: pointer;
-    color: #fff;
-    font-weight: 700;
-    &:hover {
-      background-color: #e9807a;
-      border-color: #ea8b85 #ea8b85 #e36159;
     }
   }
 }
